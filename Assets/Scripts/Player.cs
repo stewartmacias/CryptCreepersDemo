@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] Transform bulletPrefab;
     bool gunLoaded = true;
     [SerializeField] float fireRate = 1;
+    [SerializeField] int health = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -50,4 +51,15 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1/ fireRate);
         gunLoaded = true;
     }
+
+    public void TakeDamage()
+    {
+        health--;
+        if (health < 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 }
