@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     public void TakeDamage()
     {
         health--;
-        if (health < 1)
+        if (health <=0)
         {
             Destroy(gameObject);
         }
